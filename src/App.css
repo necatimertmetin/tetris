@@ -1,38 +1,47 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background-color: #282c34;
-  min-height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.tetris-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+*{
+  user-select: none;
+}
+
+.board-row {
+  display: flex;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: lightgray;
+  border: 1px solid #ccc;
+  user-select: none;
+}
+
+.cell.filled {
+  background-color: blue;
+}
+
+.next-piece {
+  margin-left: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  user-select: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.next-piece .board {
+  grid-template-rows: repeat(1, 30px);
+  grid-template-columns: repeat(1, 30px);
 }
